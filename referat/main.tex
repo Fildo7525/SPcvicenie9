@@ -1,0 +1,187 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage[slovak]{babel}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\graphicspath{./include/}
+
+\renewcommand{\figurename}{Obr.}
+\renewcommand{\contentsname}{Obsah}
+
+\begin{document}
+
+\begin{titlepage}
+	\null\vfill
+
+	\begin{center}
+		{\Huge Dvojpolohová regulácia teploty tepelného systému }
+		\vskip 2cm
+
+		{\Large Cvičenie č. 9}
+		\vskip 0.5cm
+
+		{\large Spojité procesy}
+	\end{center}
+
+	\vfill
+	\vfill
+
+	\begin{flushright}
+		Filip Lobpreis \\
+		Matúš Machata \\
+		\small\today\\
+	\end{flushright}
+	\hfill
+\end{titlepage}
+
+\thispagestyle{empty}
+\clearpage
+
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+\section{Zadanie}
+\label{sec:zadanie}
+\pagenumbering{arabic}
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\label{fig:zadanie}
+		\includegraphics[width=0.8\textwidth]{./include/zadanie.png}
+	\end{center}
+	\caption{Zadanie z cvičenia č. 9 z predmetu spojité procesy}
+\end{figure}
+
+\clearpage
+
+\section{Pomôcky}
+\label{sec:pomocky}
+
+V tomto zadaní je našou úlohou od simulovať návrh nespojitej dvojpolohovej regulácie teploty na laboratórnom
+modeli tepelného systému a overiť navrhované riešenie. Pri tomto zadaní sme použili už preddefinovanú schému
+v programe \textit{Simulink} (Obr.~\ref{fig:schema}).
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=0.95\textwidth]{./include/schema.png}
+		\label{fig:schema}
+		\caption{Simulacna schema reprezentujuca dvojpolohovu regulaciu tepelneho systemu.}
+	\end{center}
+\end{figure}
+
+V tomto zapojení vidíme tri vstupné signály, tie sú už preddefinované. \textbf{Tref} (referenčná teplota)
+má nasledujúci priebeh (viď Obr.~\ref{fig:ziadanaHodnota}).
+
+\begin{figure}[!htbp]
+	\begin{subfigure}{0.5\textwidth}
+		\includegraphics[width=\textwidth]{./include/ziadanaHodnota.png}
+		\label{fig:ziadanaHodnota}
+		\caption{Priebeh referenčnej teploty v priebehu 1800 sekúnd.}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.5\textwidth}
+		\includegraphics[width=\textwidth]{./include/porucha.png}
+		\label{fig:porucha}
+		\caption{Priebeh poruchy systému v priebehu 1800 sekúnd.}
+	\end{subfigure}
+\end{figure}
+
+Signál \textbf{d} reprezentuje poruchu systému. Poruchovou veličinou sú otáčky ventilátora, ktoré sú závislé
+od napätia na ventilátore. Toto napätie sa pohybuje v rozsahu od 20\% do 100\% (Obr.~\ref{fig:porucha}).
+
+\section{Merania}
+\label{sec:merania}
+
+\subsection{Hysteréza s hodnotou 0,2}
+\label{sec:meranie1}
+
+V prvom zadaní sme zvolili hodnotu hysterézy 0,2. Výsledok simulácie môžeme vidieť na obrázkoch
+Obr.~\ref{fig:m1t2} a Obr.~\ref{fig:m1u}.
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=\textwidth]{./include/m1T2.png}
+	\end{center}
+	\caption{Graf žiadanej a meranej hodnoty teploty na snímači T2 v prvom meraní [°C].}
+	\label{fig:m1t2}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=\textwidth]{./include/m1u.png}
+	\end{center}
+	\caption{Graf výkonu výhrevnej špirály v prvom meraní [\%].}
+	\label{fig:m1u}
+\end{figure}
+
+V prvej časti merania (od času 0s po 300s) mame žiadanú teploty 28°C s ventilátorom zapnutým na 100\%.
+V druhej časti merania (od času 300s po 600s) mame žiadanú teplotu 31°C s ventilátorom zapnutým na 100\%.
+V tretej časti merania (od času 600 po 900s) mame žiadanú teplotu 31°C s ventilátorom zapnutým na 25\%.
+V poslednej časti merania (od času 900 po 1800s) má systém vertikálne investované správanie ako prve
+dve časti merania. Systém ma žiadanú hodnotu teploty nastavenú na 31°C a ventilátor je zapnutý na 100\%
+a prechádza do stavu, kde žiadaná hodnota teploty na 28°C a ventilátor ostane zapnutý na 100\%.
+Priebeh teploty na snímači \textit{T2} vidíme na Obr.~\ref{fig:m1t2} a priebeh výkonu výhrevnej špirály
+môžeme vidieť na obrázku Obr.~\ref{fig:m1u}. Spôsob správania výhrevnej špirály je opísaný v zadaní
+\ref{sec:zadanie}.
+
+\clearpage
+
+\subsection{Hysteréza s hodnotou 0,5}
+\label{sec:meranie2}
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=\textwidth]{./include/m2T2.png}
+	\end{center}
+	\caption{Graf žiadanej a meranej hodnoty teploty na snímači T2 v druhom meraní [°C].}
+	\label{fig:m2t2}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=\textwidth]{./include/m2u.png}
+	\end{center}
+	\caption{Graf výkonu výhrevnej špirály v druhom meraní [\%].}
+	\label{fig:m2u}
+\end{figure}
+
+V druhom zadaní mame zvolenú hodnoty hysterézy 0,5. Rozdelenie časti simulácie je rovnaký ako v prvom meraní.
+Rozdiel nastáva v responzívnosti systému na zmenu teploty. V druhom meraní je responzívnosť systému menšia
+kvôli už spomínanej vyššej hodnote hysterézy. Ako môžeme vidieť na obrázku Obr.~\ref{fig:m2t2}, frekvencia
+meranej teploty na snímači T2 je menšia a zároveň aj strmosť tejto zmeny je menšia.
+
+\subsection{Hysteréza s hodnotou 0,5}
+\label{sec:meranie3}
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=\textwidth]{./include/m2T2.png}
+	\end{center}
+	\caption{Graf žiadanej a meranej hodnoty teploty na snímači T2 v treťom meraní [°C].}
+	\label{fig:m3t2}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[!htbp]
+	\begin{center}
+		\includegraphics[width=\textwidth]{./include/m2u.png}
+	\end{center}
+	\caption{Graf výkonu výhrevnej špirály v treťom meraní [\%].}
+	\label{fig:m3u}
+\end{figure}
+
+\section{Zhrnutie}
+\label{sec:zhrnutie}
+
+\end{document}
+
