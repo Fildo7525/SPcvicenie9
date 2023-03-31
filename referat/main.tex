@@ -121,14 +121,14 @@ Obr.~\ref{fig:m1t2} a Obr.~\ref{fig:m1u}.
 	\label{fig:m1u}
 \end{figure}
 
-V prvej časti merania (od času 0s po 300s) mame žiadanú teploty 28°C s ventilátorom zapnutým na 100\%.
-V druhej časti merania (od času 300s po 600s) mame žiadanú teplotu 31°C s ventilátorom zapnutým na 100\%.
-V tretej časti merania (od času 600 po 900s) mame žiadanú teplotu 31°C s ventilátorom zapnutým na 25\%.
-V poslednej časti merania (od času 900 po 1800s) má systém vertikálne investované správanie ako prve
+V prvej časti merania (od času 0s po 300s) máme žiadanú teplotu 28°C s ventilátorom zapnutým na 100\%.
+V druhej časti merania (od času 300s po 600s) máme žiadanú teplotu 31°C s ventilátorom zapnutým na 100\%.
+V tretej časti merania (od času 600s po 900s) máme žiadanú teplotu 31°C s ventilátorom zapnutým na 25\% a
+v poslednej časti merania (od času 900s po 1800s) má systém vertikálne investované správanie ako prvé
 dve časti merania. Systém ma žiadanú hodnotu teploty nastavenú na 31°C a ventilátor je zapnutý na 100\%
-a prechádza do stavu, kde žiadaná hodnota teploty na 28°C a ventilátor ostane zapnutý na 100\%.
+a prechádza do stavu, kde je žiadaná hodnota teploty 28°C a ventilátor zostane zapnutý na 100\%.
 Priebeh teploty na snímači \textit{T2} vidíme na Obr.~\ref{fig:m1t2} a priebeh výkonu výhrevnej špirály
-môžeme vidieť na obrázku Obr.~\ref{fig:m1u}. Spôsob správania výhrevnej špirály je opísaný v zadaní
+môžeme vidieť na obrázku Obr.~\ref{fig:m1u}. Spôsob správania výhrevnej špirály je opísaný v zadaní.
 \ref{sec:zadanie}.
 
 \clearpage
@@ -154,17 +154,17 @@ môžeme vidieť na obrázku Obr.~\ref{fig:m1u}. Spôsob správania výhrevnej �
 	\label{fig:m2u}
 \end{figure}
 
-V druhom zadaní mame zvolenú hodnoty hysterézy 0,5. Rozdelenie časti simulácie je rovnaký ako v prvom meraní.
+V druhom meraní máme zvolenú hodnotu hysterézy 0,5. Rozdelenie časti simulácie je rovnaké ako v prvom meraní.
 Rozdiel nastáva v responzívnosti systému na zmenu teploty. V druhom meraní je responzívnosť systému menšia
 kvôli už spomínanej vyššej hodnote hysterézy. Ako môžeme vidieť na obrázku Obr.~\ref{fig:m2t2}, frekvencia
 meranej teploty na snímači T2 je menšia a zároveň aj strmosť tejto zmeny je menšia.
 
-\subsection{Hysteréza s hodnotou 0,5}
+\subsection{Hysteréza s hodnotou 0,8}
 \label{sec:meranie3}
 
 \begin{figure}[!htbp]
 	\begin{center}
-		\includegraphics[width=\textwidth]{./include/m2T2.png}
+		\includegraphics[width=\textwidth]{./include/m3T2.png}
 	\end{center}
 	\caption{Graf žiadanej a meranej hodnoty teploty na snímači T2 v treťom meraní [°C].}
 	\label{fig:m3t2}
@@ -174,11 +174,13 @@ meranej teploty na snímači T2 je menšia a zároveň aj strmosť tejto zmeny j
 
 \begin{figure}[!htbp]
 	\begin{center}
-		\includegraphics[width=\textwidth]{./include/m2u.png}
+		\includegraphics[width=\textwidth]{./include/m3u.png}
 	\end{center}
 	\caption{Graf výkonu výhrevnej špirály v treťom meraní [\%].}
 	\label{fig:m3u}
 \end{figure}
+
+Tak isto ako pri druhom meraní, frekvencia a strmosť zmeny teploty T2 sa zmenšili kvôli zvýšeniu hodnoty hysterézy čo môžeme vidieť na Obr.~\ref{fig:m3t2}. Preto sa aj perióda zapínania výhrevnej špirály zmenšila ako môžeme vidieť na Obr.~\ref{fig:m3u}.
 
 \section{Zhrnutie}
 \label{sec:zhrnutie}

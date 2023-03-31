@@ -1,4 +1,4 @@
-load('meranie2.mat');
+load('meranie3.mat');
 
 figure(1)
 plot(out.logsout.get('T2').Values.Time,out.logsout.get('T2').Values.Data, 'LineWidth', 2);
